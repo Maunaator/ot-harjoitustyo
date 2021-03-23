@@ -8,5 +8,5 @@
 
 [komentorivi.txt](https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-
+Muutos
 
