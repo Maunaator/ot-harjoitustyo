@@ -5,4 +5,4 @@ Lisää tekstiä
 
 **Lihavoitua tekstiä**
 
-*Kursivoitua tektia*
+*Kursivoitua tekstiä*
