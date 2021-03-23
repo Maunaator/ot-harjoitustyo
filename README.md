@@ -1,8 +1,9 @@
-# Otsikko
-Tekstiä
+# Ohjelmistotekniikan harjoitustyö
 
-Lisää tekstiä
+## Tehtävät
 
-**Lihavoitua tekstiä**
+### Viikko1
 
-*Kursivoitua tekstiä*
+https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
+https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
+
