@@ -7,3 +7,7 @@
 [gitlog.txt](https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+
+### Viikko 2
+
+[kattavuus.png](https://github.com/Maunaator/ot-harjoitustyo/blob/master/laskarit/viikko2/kattavuus.png)
