@@ -21,7 +21,6 @@ public class LattariLogiikka {
     }
     
     public void uusi() {
-        System.out.println("haa");
         Laji vanha = nykyinenLaji;
         
         //ei ehkä paras tapa saada aina uusi laji mutta toimii aluksi
