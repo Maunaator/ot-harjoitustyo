@@ -26,7 +26,8 @@ public class LattariUI extends Application{
     @Override
     public void start(Stage ikkuna) throws Exception {
         
-        //Barebones UI toteutus muistuttaa tällä hetkellä aika paljon Ohjelmoinnin jatkokurssin Sanakirja tehtävää
+        //Barebones UI toteutus muistuttaa tällä hetkellä aika paljon Ohjelmoinnin jatkokurssin Sanakirja tehtävää.
+        //Tämäkin on käytännössä sanakirja joten totetus muistutta sitä, varsinkin kun kertasin JavaFX:aa jatkokurssin aineistoista.
         
         ikkuna.setTitle("Lajinnimet");
         
