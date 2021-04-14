@@ -4,127 +4,117 @@ package lattarikyselija.ui;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import lattarikyselija.data.Kieli;
+
 import lattarikyselija.data.LattariData;
 import lattarikyselija.logiikka.LattariLogiikka;
 
 public class LattariUI extends Application{
 
     private LattariLogiikka logiikka;
+    private Label kysymysLabel;
     
     @Override
     public void init() throws Exception {
-        LattariData data = new LattariData();
-        logiikka = new LattariLogiikka(data);
+        
+        kysymysLabel = new Label();
+        logiikka = new LattariLogiikka(new LattariData());
     }
     
     @Override
     public void start(Stage ikkuna) throws Exception {
-        
-        //Barebones UI toteutus muistuttaa tällä hetkellä aika paljon Ohjelmoinnin jatkokurssin Sanakirja tehtävää.
-        //Tämäkin on käytännössä sanakirja joten totetus muistutta sitä, varsinkin kun kertasin JavaFX:aa jatkokurssin aineistoista.
-        
+          
         ikkuna.setTitle("Lajinnimet");
         
-        //Alkunäkymä
+        VBox asettelu = new VBox(10);
         
-        Label ekateksti = new Label("Haluan harjoitella");
-        Button suomiNappi =  new Button("Suomenkielisiä nimiä");
-        Button lattariNappi =  new Button("Tieteellisiä nimiä");
+        asettelu.setPrefSize(600, 200);
+        asettelu.setPadding(new Insets(10, 10, 10, 10));
         
-        GridPane alkuAsettelu = new GridPane();
+        asettelu.getChildren().addAll(kieliValikko(), kyselyValikko());
         
-        alkuAsettelu.add(ekateksti, 0, 0);
-        alkuAsettelu.add(suomiNappi, 0, 1);
-        alkuAsettelu.add(lattariNappi, 1, 1);
-        
-        alkuAsettelu.setPrefSize(600, 180);
-        alkuAsettelu.setAlignment(Pos.CENTER);
-        alkuAsettelu.setPadding(new Insets(10, 10, 10, 10));
-        alkuAsettelu.setVgap(10);
-        alkuAsettelu.setHgap(10);
-        
-        Scene alkuNakyma = new Scene(alkuAsettelu);
-        
-        //Kyselynäkymä
-        
-        Button takaisinAlkuunNappi =  new Button("Takaisin");
-        Button vastaaNappi = new Button("Vastaa");
-        Button ohitaNappi = new Button("Ohita");
-        
-        Label kysymys = new Label("");
-        Label palaute = new Label("");
-        
-        TextField vastausAlue = new TextField(); 
-        
-        GridPane kyselyAsettelu = new GridPane();
-        
-        kyselyAsettelu.add(takaisinAlkuunNappi, 0, 0);
-        kyselyAsettelu.add(kysymys, 0, 1);
-        kyselyAsettelu.add(vastausAlue, 0, 2);
-        kyselyAsettelu.add(vastaaNappi, 0, 3);
-        kyselyAsettelu.add(ohitaNappi, 1, 3);
-        kyselyAsettelu.add(palaute, 0, 4);
-
-        kyselyAsettelu.setPrefSize(600, 180);
-        kyselyAsettelu.setAlignment(Pos.CENTER);
-        kyselyAsettelu.setPadding(new Insets(10, 10, 10, 10));
-        kyselyAsettelu.setVgap(10);
-        kyselyAsettelu.setHgap(10);
-        
-        Scene kyselyNakyma = new Scene(kyselyAsettelu);
-        
-        //Näkymät voisi olla erillisinä luokkina
-        
-        //Toiminnallisuus
-        
-        kysymys.setText(logiikka.kysymys());
-        
-        suomiNappi.setOnAction((event) -> {
-            ikkuna.setScene(kyselyNakyma);
-            logiikka.vaihdaTila(0);
-            palaute.setText("");
-            kysymys.setText(logiikka.kysymys());
+        Scene nakyma = new Scene(asettelu);
+        ikkuna.setScene(nakyma);
+        ikkuna.show();
+    }
+    
+    public Parent kieliValikko() {
             
+        HBox asettelu = new HBox(10);
+            
+        Button suomiNappi = new Button();
+        Button latinaNappi = new Button();
+            
+        asettelu.getChildren().addAll(suomiNappi, latinaNappi);
+            
+        suomiNappi.setText("Kysymykset suomeksi");
+        latinaNappi.setText("Kysymykset latinaksi");
+            
+        suomiNappi.setOnMouseClicked((event) -> {
+            logiikka.vaihdaKieli(Kieli.SUOMI);
+            kysymysLabel.setText(logiikka.kysymys());
         });
-        
-        lattariNappi.setOnAction((event) -> {
-            ikkuna.setScene(kyselyNakyma);
-            logiikka.vaihdaTila(1);
-            palaute.setText("");
-            kysymys.setText(logiikka.kysymys());
+            
+        latinaNappi.setOnMouseClicked((event) -> {
+            logiikka.vaihdaKieli(Kieli.LATINA);
+            kysymysLabel.setText(logiikka.kysymys());
         });
-        
-        takaisinAlkuunNappi.setOnAction((event) -> {
-            ikkuna.setScene(alkuNakyma);
-        });
-        
+            
+        return asettelu;
+    }
+    
+    public Parent kyselyValikko() {
+            
+        HBox asetteluH = new HBox(10);
+            
+        TextField vastausAlue = new TextField();
+        Button vastaaNappi = new Button();
+        Button ohitaNappi = new Button();
+            
+        vastaaNappi.setText("Vastaa");
+        ohitaNappi.setText("Ohita");
+            
+        asetteluH.getChildren().addAll(kysymysLabel, vastausAlue, vastaaNappi, ohitaNappi);
+            
+        VBox asetteluV = new VBox();
+            
+        Label vastausLabel = new Label();
+            
+        asetteluV.getChildren().addAll(asetteluH, vastausLabel);
+            
+        //Toiminnallisuus
+            
+        kysymysLabel.setText(logiikka.kysymys());
+            
         vastaaNappi.setOnMouseClicked((event) -> {
             String vastaus = vastausAlue.getText();
-            
+
             if(logiikka.vertaa(vastaus)) {
-                palaute.setText("Oikein!");
-                logiikka.uusi();
-                kysymys.setText(logiikka.kysymys());
+                vastausLabel.setText("Oikein!");
+                logiikka.uusiLaji();
+                kysymysLabel.setText(logiikka.kysymys());
+                    
             } else {
-                palaute.setText("Väärin!");
+                vastausLabel.setText("Väärin!");
             }
         });
-        
-        ohitaNappi.setOnMouseClicked((event) -> {
             
-            palaute.setText("Ohitettu: " + logiikka.lajiMolemmatNimet());
-            logiikka.uusi();
-            kysymys.setText(logiikka.kysymys());
+        ohitaNappi.setOnMouseClicked((event) -> {
+            vastausLabel.setText("Ohitettu: " + logiikka.nimiMolemmat());
+            logiikka.uusiLaji();
+            kysymysLabel.setText(logiikka.kysymys());
         });
-        
-        ikkuna.setScene(alkuNakyma);
-        ikkuna.show();
+            
+        return asetteluV;
     }
     
     public static void main(String[] args) {

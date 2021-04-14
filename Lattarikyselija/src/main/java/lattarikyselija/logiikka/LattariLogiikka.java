@@ -3,24 +3,23 @@ package lattarikyselija.logiikka;
 
 import lattarikyselija.data.Laji;
 import lattarikyselija.data.LattariData;
+import lattarikyselija.data.Kieli;
 
 public class LattariLogiikka {
     
     private LattariData data;
     private Laji nykyinenLaji;
-    
-    //Tila: 0 = suomi, 1 = latina, ei ehkä järkevin toteutus, mutta aluksi näin
-    private int tila;
+    private Kieli kieli;
 
     public LattariLogiikka(LattariData data) {
         this.data = data;
-        this.tila = 0;
+        this.kieli = Kieli.SUOMI;
         
         //Lataa aluksi lajin
-        this.uusi();
+        this.uusiLaji();
     }
     
-    public void uusi() {
+    public void uusiLaji() {
         Laji vanha = nykyinenLaji;
         
         //ei ehkä paras tapa saada aina uusi laji mutta toimii aluksi
@@ -33,43 +32,37 @@ public class LattariLogiikka {
         }
     }
     
-    public void vaihdaTila(int tila) {
-        if (tila == 1) {
-            this.tila = 1;
+    public void vaihdaKieli(Kieli vaihtoKieli) {
+        if (vaihtoKieli == Kieli.SUOMI) {
+            kieli = Kieli.SUOMI;
         } else {
-            this.tila = 0;
+            kieli = Kieli.LATINA;
         }
-    }
-    
-    public int getTila() {
-        return this.tila;
     }
     
     public String kysymys() {
         
-        if (tila == 0) {
-            return nykyinenLaji.getLnimi();
+        if(kieli == Kieli.SUOMI) {
+            return this.nykyinenLaji.getSnimi();
             
         } else {
-            
-            return nykyinenLaji.getSnimi();
+            return this.nykyinenLaji.getLnimi();
         }
     }
     
-    public String lajiMolemmatNimet() {
+    public String nimiMolemmat() {
         return nykyinenLaji.toString();
     }
     
     public boolean vertaa(String vastaus) {
         
-        String oikea;
+        String oikea = "";
         
-        if (tila == 0) {
-            oikea = nykyinenLaji.getSnimi();
+        if(kieli == Kieli.SUOMI){
+            oikea = this.nykyinenLaji.getLnimi();
             
         } else {
-            
-            oikea = nykyinenLaji.getLnimi();
+            oikea = this.nykyinenLaji.getSnimi();
         }
         
         oikea = this.trimLower(oikea);

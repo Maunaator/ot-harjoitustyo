@@ -22,15 +22,15 @@ public class LattariTest {
     @Test
     public void logiikkaKostruktoriLataaAluksiLajin() {
         
-        assertFalse(logiikka.lajiMolemmatNimet().isEmpty());
+        assertFalse(logiikka.nimiMolemmat().isEmpty());
     }
     
     @Test
     public void uusiLataaUudenLajin() {
         
-        String vanha = logiikka.lajiMolemmatNimet();
-        logiikka.uusi();
+        String vanha = logiikka.nimiMolemmat();
+        logiikka.uusiLaji();
         
-        assertFalse(logiikka.lajiMolemmatNimet().equals(vanha));
+        assertFalse(logiikka.nimiMolemmat().equals(vanha));
     }
 }
