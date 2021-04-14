@@ -4,5 +4,5 @@
 | :----: | :------: | :--------------------:| 
 | 30.3.  | 3        | Prokrastinoin aihetta |
 | 13.4.  | 7        | Vaativuusmäärittely, käyttöliittymän ja logiikan alustava toteutus |
-| 14.4.  | 2        | Yritin parantaa käyytöliittymää ja logiikkaa|
+| 14.4.  | 2        | Yritin parantaa käyttöliittymää ja logiikkaa|
 
