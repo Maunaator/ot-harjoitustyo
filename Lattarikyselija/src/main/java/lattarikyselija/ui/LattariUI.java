@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import lattarikyselija.data.Kieli;
+import lattarikyselija.logiikka.Kieli;
 
 import lattarikyselija.data.LattariData;
 import lattarikyselija.logiikka.LattariLogiikka;
@@ -83,13 +83,13 @@ public class LattariUI extends Application{
         vastaaNappi.setText("Vastaa");
         ohitaNappi.setText("Ohita");
             
-        asetteluH.getChildren().addAll(kysymysLabel, vastausAlue, vastaaNappi, ohitaNappi);
+        asetteluH.getChildren().addAll(vastaaNappi, ohitaNappi);
             
-        VBox asetteluV = new VBox();
+        VBox asetteluV = new VBox(10);
             
         Label vastausLabel = new Label();
             
-        asetteluV.getChildren().addAll(asetteluH, vastausLabel);
+        asetteluV.getChildren().addAll(kysymysLabel, vastausAlue, asetteluH, vastausLabel);
             
         //Toiminnallisuus
             

@@ -3,7 +3,6 @@ package lattarikyselija.logiikka;
 
 import lattarikyselija.data.Laji;
 import lattarikyselija.data.LattariData;
-import lattarikyselija.data.Kieli;
 
 public class LattariLogiikka {
     
