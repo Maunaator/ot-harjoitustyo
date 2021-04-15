@@ -3,13 +3,11 @@ package lattarikyselija.ui;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -73,47 +71,42 @@ public class LattariUI extends Application{
     }
     
     public Parent kyselyValikko() {
-            
-        HBox asetteluH = new HBox(10);
-            
+        
         TextField vastausAlue = new TextField();
+        Label vastausLabel = new Label();
+        
         Button vastaaNappi = new Button();
         Button ohitaNappi = new Button();
-            
+        
         vastaaNappi.setText("Vastaa");
-        ohitaNappi.setText("Ohita");
-            
-        asetteluH.getChildren().addAll(vastaaNappi, ohitaNappi);
-            
+        ohitaNappi.setText("Paljasta");
+        
         VBox asetteluV = new VBox(10);
-            
-        Label vastausLabel = new Label();
-            
+        HBox asetteluH = new HBox(10);
+        
+        asetteluH.getChildren().addAll(vastaaNappi, ohitaNappi);
         asetteluV.getChildren().addAll(kysymysLabel, vastausAlue, asetteluH, vastausLabel);
-            
-        //Toiminnallisuus
-            
+        
         kysymysLabel.setText(logiikka.kysymys());
-            
+        
         vastaaNappi.setOnMouseClicked((event) -> {
             String vastaus = vastausAlue.getText();
-
+            
             if(logiikka.vertaa(vastaus)) {
                 vastausLabel.setText("Oikein!");
                 logiikka.uusiLaji();
                 kysymysLabel.setText(logiikka.kysymys());
-                    
+                vastausAlue.clear();
+                
             } else {
                 vastausLabel.setText("Väärin!");
             }
         });
-            
+        
         ohitaNappi.setOnMouseClicked((event) -> {
-            vastausLabel.setText("Ohitettu: " + logiikka.nimiMolemmat());
-            logiikka.uusiLaji();
-            kysymysLabel.setText(logiikka.kysymys());
+            vastausLabel.setText("Vastaus: " + logiikka.nimiMolemmat());
         });
-            
+        
         return asetteluV;
     }
     
