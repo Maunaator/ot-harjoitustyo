@@ -1,5 +1,6 @@
 
 import lattarikyselija.data.LattariData;
+import lattarikyselija.logiikka.Kieli;
 import lattarikyselija.logiikka.LattariLogiikka;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,11 +27,43 @@ public class LattariTest {
     }
     
     @Test
+    public void kieliOnAluksiSUOMI() {
+        
+        assertTrue(logiikka.getKieli() == Kieli.SUOMI);
+    }
+    
+    @Test
+    public void ryhmaOnAluksiLintu() {
+        
+        assertTrue(logiikka.getRyhma().equals("Lintu"));
+    }
+    
+    @Test
     public void uusiLataaUudenLajin() {
         
         String vanha = logiikka.nimiMolemmat();
         logiikka.uusiLaji();
         
         assertFalse(logiikka.nimiMolemmat().equals(vanha));
+    }
+    
+    @Test
+    public void vaihdaKieliVaihtaaKielen() {
+
+        Kieli vanha = logiikka.getKieli();
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        
+        assertTrue(logiikka.getKieli() == Kieli.LATINA);
+    }
+    
+    @Test
+    public void ryhmanVaihtoVaihtaaNykyisenRyhman() {
+
+        String vanha = logiikka.getRyhma();
+        
+        logiikka.vaihdaRyhma("Kasvi");
+        
+        assertTrue(logiikka.getRyhma().equals("Kasvi"));
     }
 }

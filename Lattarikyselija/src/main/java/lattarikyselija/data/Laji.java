@@ -58,9 +58,6 @@ public class Laji {
         if (!Objects.equals(this.lnimi, other.lnimi)) {
             return false;
         }
-        if (!Objects.equals(this.ryhma, other.ryhma)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.ryhma, other.ryhma);
     }
 }
