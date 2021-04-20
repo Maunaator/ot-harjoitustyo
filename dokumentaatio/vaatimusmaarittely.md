@@ -10,10 +10,10 @@ Alkuvaiheessa ei ole erillisiä käyttäjärooleja. Myöhemmin sovellukseen vois
 
 ## Perusversion toiminnallisuus
 
-- Ohjelma kysyy haluatko harjoitella suomesta latinaan vai latinasta suomeen.
-- Ohjelma kyselee nimen toisella nimellä ja vastinnimi on kirjoitettava toisella.
-- Ohjelma kertoo oletko oikeassa.
-- Laji on mahdollista ohittaa, jolloin ohjelma siirtyy uuteen nimeen ja keroo oikean vastauksen.
+- Ohjelma kysyy haluatko harjoitella suomesta latinaan vai latinasta suomeen. (Tehty)
+- Ohjelma kyselee nimen toisella nimellä ja vastinnimi on kirjoitettava toisella. (Tehty)
+- Ohjelma kertoo oletko oikeassa. (Tehty)
+- Laji on mahdollista ohittaa, jolloin ohjelma siirtyy uuteen nimeen ja keroo oikean vastauksen. (Tehty)
 
 ## Jatkokehitys
 
@@ -21,7 +21,7 @@ Ohjalmaa voisi laajentaa toteuttamalla seuraavia toiminnallisuuksia.
 
 - Ohjelma hakee lajinimiparit tiedostosta
 - Tiedon tallentaminen tietokantaan
-- Valinta mitä lajiryhmää haluaa harjoitella
+- Valinta mitä lajiryhmää haluaa harjoitella (Tehty alustavasti)
 - Tulosten tilastointi ja esittäminen
 - Erilliset käyttäjät
 - Salasanat eri käyttäjille
