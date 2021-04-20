@@ -6,7 +6,7 @@
 |           | 13.4.   | 7        | Vaativuusmäärittely, käyttöliittymän ja logiikan alustava toteutus |
 |           | 14.4.   | 2        | Yritin parantaa käyttöliittymää ja logiikkaa   |
 |           | 15.4.   | 0.5      | Paransin toimintaa    |
-|           | 20.4.   | 5        | Ryhman valintanäkymä, Checkstyle, Testejä, Luokkakaavio|
+|           | 20.4.   | 5        | Ryhman valintanäkymä, checkstyle, testejä, luokkakaavio|
 | Yhteensä: |         | 17,5     |                       |
 
 
