@@ -1,4 +1,4 @@
 # Arkkitehtuuri
 
-<figure><img src="kuvat/pakkaus.png"><figcaption>Pakkausrakenne</figcaption></figure>
+<figure><img src="kuvat/pakkaus.png"><figcaption>Pakkauskaavio</figcaption></figure>
 
