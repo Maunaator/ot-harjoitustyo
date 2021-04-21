@@ -7,7 +7,8 @@
 |           | 14.4.   | 2        | Yritin parantaa käyttöliittymää ja logiikkaa   |
 |           | 15.4.   | 0.5      | Paransin toimintaa    |
 |           | 20.4.   | 5        | Ryhman valintanäkymä, checkstyle, testejä, luokkakaavio|
-| Yhteensä: |         | 17,5     |                       |
+|           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
+| Yhteensä: |         | 18,5     |                       |
 
 
 
