@@ -1,10 +1,8 @@
 
 package lattarikyselija.ui;
 
-import java.util.List;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -18,7 +16,7 @@ public class Ryhmavalikko {
         this.logiikka = logiikka;
     }
     
-    public Parent getNakyma() {
+    public Parent getAsettelu() {
         
         return this.ryhmaAlue();
     }
@@ -32,6 +30,7 @@ public class Ryhmavalikko {
         Label otsikko = new Label("Valitse harjoiteltava ryhmä");
         asettelu.getChildren().add(otsikko);
         
+        // Luodaan napit eri ryhmille
         logiikka.getRyhmat().stream().forEach(r -> {
             
             //Jos ryhmiä on paljon, tämä tapa on ongelmallinen
@@ -43,10 +42,7 @@ public class Ryhmavalikko {
             nappi.setOnMouseClicked((event) -> {
                 
                 logiikka.vaihdaRyhma((String) r);
-                
-                LattariUI.getStage().setScene(new Scene(new Kyselyvalikko(logiikka).getNakyma()));
-                // Tämä ei oikein tunnu selkeimmältä tavalta siirtyä näkymien välillä, pitää miettiä parempaa
-                
+                LattariUI.naytaKyselynakyma();
             });
         });
             

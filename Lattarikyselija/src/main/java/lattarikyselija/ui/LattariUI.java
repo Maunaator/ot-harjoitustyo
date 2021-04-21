@@ -10,32 +10,35 @@ import lattarikyselija.logiikka.LattariLogiikka;
 
 public class LattariUI extends Application{
     
-    private LattariLogiikka logiikka;
-    private static Stage nykyinenIkkuna;
-    
-    public static Stage getStage() {
-        
-        return nykyinenIkkuna;
-    }
+    private static LattariLogiikka logiikka;
+    private static Stage ikkuna;
     
     @Override
     public void init() throws Exception {
         
-        logiikka = new LattariLogiikka(new LattariData());
+        this.logiikka = new LattariLogiikka(new LattariData());
     }
     
     @Override
     public void start(Stage ikkuna) throws Exception {
         
-        nykyinenIkkuna = ikkuna;
+        this.ikkuna = ikkuna;
         
         ikkuna.setTitle("Lajinnimet");
-        Ryhmavalikko ryhmavalikko = new Ryhmavalikko(logiikka);
         
-        Scene ryhmanakyma = new Scene(ryhmavalikko.getNakyma());
+        naytaRyhmanakyma();
         
-        ikkuna.setScene(ryhmanakyma);
         ikkuna.show();
+    }
+    
+    public static void naytaKyselynakyma() {
+        
+        ikkuna.setScene(new Scene(new Kyselyvalikko(logiikka).getAsettelu()));
+    }
+    
+    public static void naytaRyhmanakyma() {
+        
+        ikkuna.setScene(new Scene(new Ryhmavalikko(logiikka).getAsettelu()));
     }
     
     public static void main(String[] args) {

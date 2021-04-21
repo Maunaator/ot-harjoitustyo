@@ -3,7 +3,6 @@ package lattarikyselija.ui;
 
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -22,7 +21,7 @@ public class Kyselyvalikko {
         this.kysymysLabel = new Label();
     }
     
-    public Parent getNakyma() {
+    public Parent getAsettelu() {
         
         VBox asettelu = new VBox(10);
         
@@ -61,8 +60,7 @@ public class Kyselyvalikko {
         
         takaisinNappi.setOnMouseClicked((event) -> {
             
-            LattariUI.getStage().setScene(new Scene(new Ryhmavalikko(logiikka).getNakyma()));
-            // Tämä ei oikein tunnu selkeimmältä tavalta siirtyä näkymien välillä, pitää miettiä parempaa
+            LattariUI.naytaRyhmanakyma();
         });
             
         return asettelu;
