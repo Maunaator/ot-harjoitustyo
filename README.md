@@ -36,9 +36,13 @@ mvn jxr:jxr checkstyle:checkstyle
 Luettavissa sijainnissa _/target/site/checkstyle.html_
 
 ### Jarin generointi:
-Jarin generointi komennolla:
+Jari-tiedoston generointi komennolla:
 ```
 mvn package
 ```
 Lattarikyselija-1.0-SNAPSHOT.jar syntyy sijaintiin _/target_
 
+Jar-tiedosto voidaan suorittaa sen sijaintikansiosta komennolla:
+```
+java -jar Lattarikyselija-1.0-SNAPSHOT.jar
+```
