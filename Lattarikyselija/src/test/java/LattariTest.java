@@ -1,11 +1,9 @@
 
+import lattarikyselija.data.Laji;
 import lattarikyselija.data.LattariData;
 import lattarikyselija.logiikka.Kieli;
 import lattarikyselija.logiikka.LattariLogiikka;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -33,9 +31,9 @@ public class LattariTest {
     }
     
     @Test
-    public void ryhmaOnAluksiLintu() {
+    public void logiikkaKonstruktoriLataaAluksiRyhman() {
         
-        assertTrue(logiikka.getRyhma().equals("Lintu"));
+        assertFalse(logiikka.getRyhma().isEmpty());
     }
     
     @Test
@@ -59,11 +57,113 @@ public class LattariTest {
     
     @Test
     public void ryhmanVaihtoVaihtaaNykyisenRyhman() {
-
+        
+        logiikka.vaihdaRyhma("Linnut");
+        
         String vanha = logiikka.getRyhma();
         
-        logiikka.vaihdaRyhma("Kasvi");
+        logiikka.vaihdaRyhma("Kasvit");
         
-        assertTrue(logiikka.getRyhma().equals("Kasvi"));
+        assertTrue(logiikka.getRyhma().equals("Kasvit") & (vanha.equals("Linnut")));
+        
+        //käytännössä tupla assert testissä, en oikein keksinyt miten muuten testata
+    }
+    
+    @Test
+    public void vertaaPalauttaaTrueOikeallaVastauksella() {
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        String kysymys = logiikka.kysymys();
+        
+        logiikka.vaihdaKieli(Kieli.SUOMI);
+        String vastaus = logiikka.kysymys();
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        
+        assertTrue(logiikka.vertaa(vastaus));
+    }
+    
+    @Test
+    public void vertaaPalauttaaFalseVäärälläVastauksella() {
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        String kysymys = logiikka.kysymys();
+        
+        assertFalse(logiikka.vertaa("dsgsg"));
+    }
+    
+    @Test
+    public void vertaaEiVälitäKirjainkoosta() {
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        String kysymys = logiikka.kysymys();
+        
+        logiikka.vaihdaKieli(Kieli.SUOMI);
+        String vastaus = logiikka.kysymys();
+        
+        vastaus = vastaus.toLowerCase();
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        
+        assertTrue(logiikka.vertaa(vastaus));
+    }
+    
+    @Test
+    public void vertaaEiVälitäEdeltavistaTaiSeuraavistaValilyönneista() {
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        String kysymys = logiikka.kysymys();
+        
+        logiikka.vaihdaKieli(Kieli.SUOMI);
+        String vastaus = logiikka.kysymys();
+        
+        vastaus = "  " + vastaus + "   ";
+        
+        logiikka.vaihdaKieli(Kieli.LATINA);
+        
+        assertTrue(logiikka.vertaa(vastaus));
+    }
+    
+    @Test
+    public void nykyinenRyhmaLöytyyGetRyhmatPalauttamaltaListalta() {
+        
+        assertTrue(logiikka.getRyhmat().contains(logiikka.getRyhma()));
+        
+    }
+    
+    @Test
+    public void EqualsPalauttaaTrueSamallaLajilla() {
+        
+        Laji ekaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
+        Laji tokaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
+        
+        assertTrue(ekaLaji.equals(tokaLaji));
+    }
+    
+    @Test
+    public void lajinEqualsTestaaSuomalaistaNimea() {
+        
+        Laji ekaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
+        Laji tokaLaji = new Laji("Ihratiainen", "Parus major", "Linnut");
+        
+        assertFalse(ekaLaji.equals(tokaLaji));
+    }
+    
+    @Test
+    public void lajinEqualsTestaaLatinalaistaNimea() {
+        //Sinäänsä synonyymit voisi lisätä toiminnallisuudeksi
+        
+        Laji ekaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Linnut");
+        Laji tokaLaji = new Laji("Sinitiainen", "Cyanistes caeruleus", "Linnut");
+        
+        assertFalse(ekaLaji.equals(tokaLaji));
+    }
+    
+    @Test
+    public void lajinEqualsTestaaRyhmää() {
+        Laji ekaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Linnut");
+        Laji tokaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Varpuslinnut");
+        
+        assertFalse(ekaLaji.equals(tokaLaji));
     }
 }

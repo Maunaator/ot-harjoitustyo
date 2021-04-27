@@ -15,11 +15,15 @@ public class LattariLogiikka {
     public LattariLogiikka(LattariData data) {
         this.data = data;
         
+        // Asettaa aluksi ensimmäisen kielen, ryhman ja lajin.
         this.nykyinenKieli = Kieli.SUOMI;
-        this.nykyinenRyhma = "Lintu";
-        
-        //Lataa aluksi lajin
+        this.alkuRyhma();
         this.uusiLaji();
+    }
+    
+    private void alkuRyhma() {
+        
+        this.nykyinenRyhma = (String) data.getRyhmat().get(0);
     }
     
     public void uusiLaji() {
