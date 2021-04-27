@@ -9,7 +9,8 @@
 |           | 20.4.   | 5        | Ryhman valintanäkymä, checkstyle, testejä, luokkakaavio|
 |           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
 |           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä|
-| Yhteensä: |         | 24,5     |                       |
+|           | 28.4.   | 2        | Suoritus toimii taas jar tiedostosta|
+| Yhteensä: |         | 26,5     |                       |
 
 
 
