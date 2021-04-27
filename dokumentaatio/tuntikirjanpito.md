@@ -8,7 +8,8 @@
 |           | 15.4.   | 0.5      | Paransin toimintaa    |
 |           | 20.4.   | 5        | Ryhman valintanäkymä, checkstyle, testejä, luokkakaavio|
 |           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
-| Yhteensä: |         | 18,5     |                       |
+|           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä|
+| Yhteensä: |         | 24,5     |                       |
 
 
 
