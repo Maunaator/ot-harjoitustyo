@@ -1,13 +1,13 @@
 
 package lattarikyselija.data;
 
-import java.io.File;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+
+
 import java.util.stream.Collectors;
 
 public class LattariData {
@@ -20,29 +20,47 @@ public class LattariData {
         ryhmat = new ArrayList<>();
         
         this.loadRyhmat();
+        this.loadLajit();
     }
     
     private void loadRyhmat() {
-        //ryhmät kansion tiedostot
-        File sijainti = new File("ryhmat");
-        //käydään tiedostot läpi
-        Arrays.stream(sijainti.listFiles()).forEach(tiedosto -> {
-            //Ryhmän nimi tiedoston nimestä, en tiedä onko ongelma että tiedostot ovat päätteetömiä
-            this.ryhmat.add(tiedosto.getName());
+        
+        //En osannut toteuttaa tätä niin että ohjelma lukisi ryhmat kansion tiedostonnimet myös jarissa
+        //joten jouduin lisäämään tuon Ryhmat tiedoston jossa nimet ovat.
+        
+        try (
+            BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/ryhmat/Ryhmat")))) {
             
-            try (Scanner lukija = new Scanner(Paths.get(tiedosto.getAbsolutePath()))) {
-                
-                while (lukija.hasNextLine()) {
-                    
-                    String rivi = lukija.nextLine();
+            lukija.lines().forEach(rivi -> {
+                this.ryhmat.add(rivi);
+            });
+            
+            lukija.close();
+            
+        } catch (Exception virhe) {
+                System.out.println("Virhe: " + virhe.getMessage());
+        }
+    }
+    
+    public void loadLajit() {
+        
+        this.ryhmat.stream().forEach((ryhma -> {
+            
+            try (
+                BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/ryhmat/" + ryhma)))) {
+
+                lukija.lines().forEach(rivi -> {
+
                     String[] palat = rivi.split(";");
-                    
-                    this.lajit.add(new Laji(palat[0], palat[1], tiedosto.getName()));
-                }
+                    this.lajit.add(new Laji(palat[0], palat[1], ryhma));
+                });
+                
+                lukija.close();
+
             } catch (Exception virhe) {
                 System.out.println("Virhe: " + virhe.getMessage());
             }
-        });
+        }));
     }
     
     public List getRyhmat() {
