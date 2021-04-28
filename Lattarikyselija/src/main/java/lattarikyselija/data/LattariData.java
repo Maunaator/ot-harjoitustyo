@@ -27,6 +27,7 @@ public class LattariData {
         
         //En osannut toteuttaa tätä niin että ohjelma lukisi ryhmat kansion tiedostonnimet myös jarissa
         //joten jouduin lisäämään tuon Ryhmat tiedoston jossa nimet ovat.
+        //Ryhmä-tiedostot vielä muutaman lajin sisältäviä testaus versioita.
         
         try (
             BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/ryhmat/Ryhmat")))) {
