@@ -8,7 +8,7 @@
 |           | 15.4.   | 0.5      | Paransin toimintaa    |
 |           | 20.4.   | 5        | Ryhman valintanäkymä, checkstyle, testejä, luokkakaavio|
 |           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
-|           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä|
+|           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä, ensimmäinen Release|
 |           | 28.4.   | 3        | Suoritus toimii taas jar-tiedostosta|
 | Yhteensä: |         | 27,5     |                       |
 
