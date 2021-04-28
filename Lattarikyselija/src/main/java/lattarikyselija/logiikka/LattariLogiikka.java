@@ -73,19 +73,14 @@ public class LattariLogiikka {
     
     public boolean vertaa(String vastaus) {
         
-        String oikea = "";
-        
         if (nykyinenKieli == Kieli.SUOMI) {
-            oikea = this.nykyinenLaji.getLnimi();
+            return this.trimLower(this.nykyinenLaji.getLnimi())
+                    .equals(this.trimLower(vastaus));
             
         } else {
-            oikea = this.nykyinenLaji.getSnimi();
+            return this.trimLower(this.nykyinenLaji.getSnimi())
+                    .equals(this.trimLower(vastaus));
         }
-        
-        oikea = this.trimLower(oikea);
-        vastaus = this.trimLower(vastaus);
-        
-        return oikea.equals(vastaus);
     }
     
     public List getRyhmat() {
@@ -105,10 +100,7 @@ public class LattariLogiikka {
     
     private String trimLower(String sana) {
         
-        sana = sana.toLowerCase();
-        sana = sana.trim();
-        
-        return sana;
+        return sana.trim().toLowerCase();
     }
             
 }

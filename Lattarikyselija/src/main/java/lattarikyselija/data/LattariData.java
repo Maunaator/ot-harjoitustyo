@@ -30,7 +30,8 @@ public class LattariData {
         //Ryhmä-tiedostot vielä muutaman lajin sisältäviä testaus versioita.
         
         try (
-            BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/ryhmat/Ryhmat")))) {
+            BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass()
+                    .getResourceAsStream("/ryhmat/Ryhmat")))) {
             
             lukija.lines().forEach(rivi -> {
                 this.ryhmat.add(rivi);
@@ -43,15 +44,16 @@ public class LattariData {
         }
     }
     
-    public void loadLajit() {
+    private void loadLajit() {
         
         this.ryhmat.stream().forEach((ryhma -> {
             
             try (
-                BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/ryhmat/" + ryhma)))) {
+                BufferedReader lukija = new BufferedReader(new InputStreamReader(getClass()
+                        .getResourceAsStream("/ryhmat/" + ryhma)))) {
 
                 lukija.lines().forEach(rivi -> {
-
+                    
                     String[] palat = rivi.split(";");
                     this.lajit.add(new Laji(palat[0], palat[1], ryhma));
                 });
@@ -74,9 +76,7 @@ public class LattariData {
         
         List<Laji> ryhmanLajit = getRyhmanLajit(ryhma);
         
-        Random rand = new Random();
-        
-        return ryhmanLajit.get(rand.nextInt(ryhmanLajit.size()));
+        return ryhmanLajit.get(new Random().nextInt(ryhmanLajit.size()));
     }
     
     private List<Laji> getRyhmanLajit(String ryhma) {
