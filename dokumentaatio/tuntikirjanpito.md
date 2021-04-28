@@ -10,7 +10,7 @@
 |           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
 |           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä|
 |           | 28.4.   | 3        | Suoritus toimii taas jar tiedostosta|
-| Yhteensä: |         | 26,5     |                       |
+| Yhteensä: |         | 27,5     |                       |
 
 
 
