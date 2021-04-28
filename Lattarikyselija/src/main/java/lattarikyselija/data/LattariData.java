@@ -39,7 +39,7 @@ public class LattariData {
             lukija.close();
             
         } catch (Exception virhe) {
-                System.out.println("Virhe: " + virhe.getMessage());
+            System.out.println("Virhe: " + virhe.getMessage());
         }
     }
     
