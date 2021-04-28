@@ -36,7 +36,7 @@ mvn jxr:jxr checkstyle:checkstyle
 Luettavissa sijainnissa _/target/site/checkstyle.html_
 
 ### Jarin generointi:
-Jari-tiedoston generointi komennolla:
+Jar-tiedoston generointi komennolla:
 ```
 mvn package
 ```
