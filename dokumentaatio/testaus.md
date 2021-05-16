@@ -17,7 +17,9 @@ Testauksessa simuloidaan käyttöliittymän pakkauksen
 ### Testikattavuus
 
 Käyttöliittymän pakkaus [lattarikyselija.ui](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/main/java/lattarikyselija/ui/) 
-poislukien testauksen rivikattavuus on ja haarautumiskattuvuus on .
+poislukien testauksen rivikattavuus on 92% ja haarautumiskattuvuus on 86%.
+
+<img src="https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kattavuus.png " width="800">
 
 ## Järjestelmätestaus
 
