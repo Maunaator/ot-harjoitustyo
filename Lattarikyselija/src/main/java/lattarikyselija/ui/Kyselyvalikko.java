@@ -11,6 +11,10 @@ import javafx.scene.layout.VBox;
 import lattarikyselija.logiikka.Kieli;
 import lattarikyselija.logiikka.LattariLogiikka;
 
+/**
+ * Luokka vastaa käyttöliittymän lajeja kyselevästä osiosta.
+ */
+
 public class Kyselyvalikko {
     
     private LattariLogiikka logiikka;
@@ -20,6 +24,12 @@ public class Kyselyvalikko {
         this.logiikka = logiikka;
         this.kysymysLabel = new Label();
     }
+    
+    /**
+     * Metodi palauttaa lajeja kyselevän valikkoasettelun.
+     *  
+     * @return kyselyvalikkoasettelu
+     */
     
     public Parent getAsettelu() {
         
@@ -70,6 +80,7 @@ public class Kyselyvalikko {
         
         TextField vastausAlue = new TextField();
         Label vastausLabel = new Label();
+        Label ohjeLabel = new Label();
         
         Button vastaaNappi = new Button();
         Button ohitaNappi = new Button();
@@ -81,7 +92,7 @@ public class Kyselyvalikko {
         HBox asetteluH = new HBox(10);
         
         asetteluH.getChildren().addAll(vastaaNappi, ohitaNappi);
-        asetteluV.getChildren().addAll(kysymysLabel, vastausAlue, asetteluH, vastausLabel);
+        asetteluV.getChildren().addAll(kysymysLabel, vastausAlue, asetteluH, vastausLabel, ohjeLabel);
         
         kysymysLabel.setText(logiikka.kysymys());
         
@@ -90,6 +101,7 @@ public class Kyselyvalikko {
             
             if(logiikka.vertaa(vastaus)) {
                 vastausLabel.setText("Oikein!");
+                ohjeLabel.setText("");
                 logiikka.uusiLaji();
                 kysymysLabel.setText(logiikka.kysymys());
                 vastausAlue.clear();
@@ -101,6 +113,7 @@ public class Kyselyvalikko {
         
         ohitaNappi.setOnMouseClicked((event) -> {
             vastausLabel.setText("Vastaus: " + logiikka.nimiMolemmat());
+            ohjeLabel.setText("Syötä oikea vastaus ja pääset jatkamaan.");
         });
         
         return asetteluV;

@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 import lattarikyselija.data.LattariData;
 import lattarikyselija.logiikka.LattariLogiikka;
 
+/**
+ * Käyttöliittymästä vastaava luokka
+ */
+
 public class LattariUI extends Application{
     
     private static LattariLogiikka logiikka;
@@ -31,10 +35,18 @@ public class LattariUI extends Application{
         ikkuna.show();
     }
     
+    /**
+     * Metodi näyttää Kyselynäkymän
+     */
+    
     public static void naytaKyselynakyma() {
         
         ikkuna.setScene(new Scene(new Kyselyvalikko(logiikka).getAsettelu()));
     }
+    
+    /**
+     * Metodi näyttää Ryhmänäkymän
+    */
     
     public static void naytaRyhmanakyma() {
         

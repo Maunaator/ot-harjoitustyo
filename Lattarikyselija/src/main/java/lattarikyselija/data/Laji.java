@@ -3,6 +3,10 @@ package lattarikyselija.data;
 
 import java.util.Objects;
 
+/**
+ * Lajia kuvaava luokka.
+ */
+
 public class Laji {
     private String snimi;
     private String lnimi;

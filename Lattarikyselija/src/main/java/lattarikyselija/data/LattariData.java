@@ -6,16 +6,19 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-
 import java.util.stream.Collectors;
+
+/**
+ * Luokka vastaa lajiryhmien ja lajinimien säilytyksestä ja tiedostosta hausta.
+ */
+
 
 public class LattariData {
     private List<Laji> lajit;
     private List<String> ryhmat;
 
     public LattariData() {
-        //Tarkoitus olisi toteuttaa tämä tietokantana myöhemmin
+        
         lajit = new ArrayList<>();
         ryhmat = new ArrayList<>();
         
@@ -66,13 +69,26 @@ public class LattariData {
         }));
     }
     
+    /**
+    * Metodi palauttaa lajiryhmät listana.
+    * 
+    * @return lajiryhmät
+    */
+    
     public List getRyhmat() {
         
         return this.ryhmat;
     }
     
+    /**
+    * Metodi palauttaa satunnaisen lajin halutusta ryhmästä.
+    * 
+    * @param ryhma haluttu ryhmä
+    * 
+    * @return satunnainen ryhmän laji
+    */
+    
     public Laji getRandRyhmanLaji(String ryhma) {
-        //Varsin epätehokas mutta toimii tässä vaiheessa
         
         List<Laji> ryhmanLajit = getRyhmanLajit(ryhma);
         
@@ -87,6 +103,14 @@ public class LattariData {
         
         return ryhmanLajit;
     }
+    
+    /**
+    * Metodi kertoo löytyykö kyseinen ryhmä.
+    * 
+    * @param ryhma kysytty ryhmä
+    * 
+    * @return totuusarvo ryhmän olemassaolosta
+    */
     
     public boolean ryhmaOlemassa(String ryhma) {
         

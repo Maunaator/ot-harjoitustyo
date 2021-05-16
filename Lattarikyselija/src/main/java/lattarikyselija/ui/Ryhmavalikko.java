@@ -8,6 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import lattarikyselija.logiikka.LattariLogiikka;
 
+/**
+ * Luokka vastaa käyttöliittymän ryhmänvalintaosiosta.
+ */
+
 public class Ryhmavalikko {
     
     private LattariLogiikka logiikka;
@@ -15,6 +19,13 @@ public class Ryhmavalikko {
     public Ryhmavalikko(LattariLogiikka logiikka) {
         this.logiikka = logiikka;
     }
+    
+     /**
+     * Metodi palauttaa ryhmän valinnan mahdollistavan valikkoasettelun.
+     *  
+     * @return ryhmänvalintaasettelu
+     */
+    
     
     public Parent getAsettelu() {
         

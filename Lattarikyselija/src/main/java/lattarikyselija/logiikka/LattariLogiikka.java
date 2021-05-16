@@ -5,6 +5,10 @@ import java.util.List;
 import lattarikyselija.data.Laji;
 import lattarikyselija.data.LattariData;
 
+/**
+ * Sovelluslogiikasta vastaava luokka.
+ */
+
 public class LattariLogiikka {
     
     private LattariData data;
@@ -26,6 +30,10 @@ public class LattariLogiikka {
         this.nykyinenRyhma = (String) data.getRyhmat().get(0);
     }
     
+    /**
+     * Metodi vaihtaa nykyisen kyseltävän lajin satunnaiseen uuteen nykyisen ryhmän lajiin.
+     */
+    
     public void uusiLaji() {
         Laji vanha = nykyinenLaji;
         
@@ -39,6 +47,12 @@ public class LattariLogiikka {
         }
     }
     
+    /**
+     * Metodi vaihtaa nykyisen lajikyselyjen kielen.
+     * 
+     * @param vaihtoKieli kieli johon halutaan vaihtaa
+     */
+    
     public void vaihdaKieli(Kieli vaihtoKieli) {
         if (vaihtoKieli == Kieli.SUOMI) {
             nykyinenKieli = Kieli.SUOMI;
@@ -48,6 +62,12 @@ public class LattariLogiikka {
         }
     }
     
+    /**
+     * Metodi vaihtaa kyseltävän ryhmän.
+     * 
+     * @param ryhma ryhmä johon halutaan vaihtaa
+     */
+    
     public void vaihdaRyhma(String ryhma) {
         
         if (data.ryhmaOlemassa(ryhma)) {
@@ -56,6 +76,12 @@ public class LattariLogiikka {
             this.uusiLaji();
         }
     }
+    
+    /**
+     * Metodi palauttaa nykyistä lajia vastaavan kysymyksen.
+     * 
+     * @return lajikysymys
+     */
     
     public String kysymys() {
         
@@ -67,9 +93,23 @@ public class LattariLogiikka {
         }
     }
     
+    /**
+     * Metodi palauttaa nykyisen lajin suomenkielisen ja latinakielisen nimen.
+     * 
+     * @return lajin nimipari
+     */
+    
     public String nimiMolemmat() {
         return nykyinenLaji.toString();
     }
+    
+     /**
+     * Metodi kertoo onko annettu vastaus oikein.
+     * 
+     * @param vastaus
+     * 
+     * @return totuuarvo onko vastaus oikein
+     */
     
     public boolean vertaa(String vastaus) {
         
@@ -83,15 +123,33 @@ public class LattariLogiikka {
         }
     }
     
+    /**
+     * Metodi palauttaa listan sovelluksen tuntemista ryhmistä.
+     * 
+     * @return lista ryhmistä
+     */
+    
     public List getRyhmat() {
         
         return data.getRyhmat();
     }
     
+    /**
+     * Metodi palauttaa nykyisen kyselykielen.
+     * 
+     * @return nykyinen kyselyjen kieli
+     */
+    
     public Kieli getKieli() {
         
         return this.nykyinenKieli;
     }
+    
+    /**
+     * Metodi palauttaa nykyisen kyseltävän ryhmän.
+     * 
+     * @return nykyinen ryhmä
+     */
     
     public String getRyhma() {
         
