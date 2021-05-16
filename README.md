@@ -35,6 +35,12 @@ mvn jxr:jxr checkstyle:checkstyle
 ```
 Luettavissa sijainnissa _/target/site/checkstyle.html_
 
+Javadoc komennolla:
+```
+mvn javadoc:javadoc
+```
+Luettavissa sijainnissa _/target/site/apidocs/index.html_
+
 ### Jarin generointi:
 Jar-tiedoston generointi komennolla:
 ```
