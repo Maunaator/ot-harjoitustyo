@@ -8,6 +8,9 @@ Sovelluslogiikan
 pakkauksien luokkia testataan integraatiotestillä 
 [LattariTest](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/test/java/LattariTest.java/).
 
+Pakkauksen [lattarikyselija.data](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/main/java/lattarikyselija/data/) luokan [Laji](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/main/java/lattarikyselija/data/Laji.java/) equals- ja hash-metodit testataan yksikkötestillä 
+[LajiTest](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/test/java/LajiTest.java/).
+
 Testauksessa simuloidaan käyttöliittymän pakkauksen 
 [lattarikyselija.ui](https://github.com/Maunaator/ot-harjoitustyo/blob/master/Lattarikyselija/src/main/java/lattarikyselija/ui/) luokkien toimintaa.
 
