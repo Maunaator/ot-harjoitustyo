@@ -2,6 +2,8 @@
 
 ## Tieteellisten nimien harjoittelusovellus
 
+Ohjelmalla voidaan harjoitella lajien tieteellisiä ja suomenkielisiä nimiä.
+
 [Käyttöohje](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Tuntikirjanpito](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
