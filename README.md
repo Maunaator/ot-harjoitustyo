@@ -2,13 +2,15 @@
 
 ## Tieteellisten nimien harjoittelusovellus
 
+[Käyttöohje](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Tuntikirjanpito](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 [Vaativuusmäärittely](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[Arkkitehtuuri](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Testaus](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
-[Käyttöohje](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+[Arkkitehtuuri](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ## Komentorivitoiminnot
 
