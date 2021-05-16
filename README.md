@@ -18,7 +18,7 @@ Ohjelmalla voidaan harjoitella lajien tieteellisiä ja suomenkielisiä nimiä.
 
 ## Release
 
-[Release](https://github.com/Maunaator/ot-harjoitustyo/releases/tag/6.0)
+[Release](https://github.com/Maunaator/ot-harjoitustyo/releases/tag/6.1)
 
 ## Komentorivitoiminnot
 
