@@ -10,7 +10,7 @@ Ohjelmassa ei ole erillisiä käyttäjärooleja.
 
 ## Perusversion toiminnallisuus
 
--Ohjelma kysyy mitä lajiryhmää haluaa harjoitella.
+- Ohjelma kysyy mitä lajiryhmää haluaa harjoitella.
 - Ohjelma kysyy haluatko harjoitella suomesta latinaan vai latinasta suomeen.
 - Ohjelma kyselee nimen toisella nimellä ja vastinnimi on kirjoitettava toisella.
 - Ohjelma kertoo oletko oikeassa.
