@@ -1,5 +1,4 @@
 
-import lattarikyselija.data.Laji;
 import lattarikyselija.data.LattariData;
 import lattarikyselija.logiikka.Kieli;
 import lattarikyselija.logiikka.LattariLogiikka;
@@ -129,41 +128,5 @@ public class LattariTest {
         
         assertTrue(logiikka.getRyhmat().contains(logiikka.getRyhma()));
         
-    }
-    
-    @Test
-    public void EqualsPalauttaaTrueSamallaLajilla() {
-        
-        Laji ekaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
-        Laji tokaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
-        
-        assertTrue(ekaLaji.equals(tokaLaji));
-    }
-    
-    @Test
-    public void lajinEqualsTestaaSuomalaistaNimea() {
-        
-        Laji ekaLaji = new Laji("Talitiainen", "Parus major", "Linnut");
-        Laji tokaLaji = new Laji("Ihratiainen", "Parus major", "Linnut");
-        
-        assertFalse(ekaLaji.equals(tokaLaji));
-    }
-    
-    @Test
-    public void lajinEqualsTestaaLatinalaistaNimea() {
-        //Sinäänsä synonyymit voisi lisätä toiminnallisuudeksi
-        
-        Laji ekaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Linnut");
-        Laji tokaLaji = new Laji("Sinitiainen", "Cyanistes caeruleus", "Linnut");
-        
-        assertFalse(ekaLaji.equals(tokaLaji));
-    }
-    
-    @Test
-    public void lajinEqualsTestaaRyhmää() {
-        Laji ekaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Linnut");
-        Laji tokaLaji = new Laji("Sinitiainen", "Parus caeruleus", "Varpuslinnut");
-        
-        assertFalse(ekaLaji.equals(tokaLaji));
     }
 }
