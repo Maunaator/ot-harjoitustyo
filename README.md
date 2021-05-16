@@ -8,6 +8,8 @@
 
 [Arkkitehtuuri](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Komentorivitoiminnot
 
 Suoritetaan kansiossa _/Lattarikyselija_
