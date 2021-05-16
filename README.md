@@ -4,6 +4,8 @@
 
 Ohjelmalla voidaan harjoitella lajien tieteellisiä ja suomenkielisiä nimiä.
 
+## Dokumentaatio
+
 [Käyttöohje](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Tuntikirjanpito](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
@@ -13,6 +15,10 @@ Ohjelmalla voidaan harjoitella lajien tieteellisiä ja suomenkielisiä nimiä.
 [Testaus](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 [Arkkitehtuuri](https://github.com/Maunaator/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+## Release
+
+[Release](https://github.com/Maunaator/ot-harjoitustyo/releases/tag/6.0)
 
 ## Komentorivitoiminnot
 
