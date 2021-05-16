@@ -10,7 +10,8 @@
 |           | 21.4.   | 1        | Pyrin selkeyttämään näkymien välillä siirtymistä|
 |           | 27.4.   | 6        | Ryhmien luku tiedostosta, testejä, ensimmäinen Release|
 |           | 28.4.   | 3,5      | Suoritus toimii taas jar-tiedostosta, siistin koodia |
-| Yhteensä: |         | 28       |                       |
+|           | 16.4.   | 6        | javadoc, dokumentaatiota, lopullinen release |
+| Yhteensä: |         | 34       |                       |
 
 
 
