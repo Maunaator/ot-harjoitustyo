@@ -2,26 +2,26 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla on mahdollista harjoitella lajien tieteellisiä nimiä (Soveltuu myös esim. anatomisten termien harjoitteluun).
+Sovelluksen avulla on mahdollista harjoitella lajien tieteellisiä nimiä.
 
 ## Käyttäjät
 
-Alkuvaiheessa ei ole erillisiä käyttäjärooleja. Myöhemmin sovellukseen voisi lisät erilliset käyttäjät, joille voisi myös toteuttaa tulosten tilastointia.
+Ohjelmassa ei ole erillisiä käyttäjärooleja.
 
 ## Perusversion toiminnallisuus
 
-- Ohjelma kysyy haluatko harjoitella suomesta latinaan vai latinasta suomeen. (Tehty viikko 3)
-- Ohjelma kyselee nimen toisella nimellä ja vastinnimi on kirjoitettava toisella. (Tehty viikko 3)
-- Ohjelma kertoo oletko oikeassa. (Tehty viikko 3)
-- Laji on mahdollista ohittaa, jolloin ohjelma siirtyy uuteen nimeen ja keroo oikean vastauksen. (Tehty viikko 3)
+-Ohjelma kysyy mitä lajiryhmää haluaa harjoitella.
+- Ohjelma kysyy haluatko harjoitella suomesta latinaan vai latinasta suomeen.
+- Ohjelma kyselee nimen toisella nimellä ja vastinnimi on kirjoitettava toisella.
+- Ohjelma kertoo oletko oikeassa.
+- Oikea vastaus on mahdollista paljastaa, mutta vastaus on silti syötettävä, jotta saa uuden lajin.
+- Ohjelma hakee lajinimiparit tiedostosta
 
 ## Jatkokehitys
 
 Ohjalmaa voisi laajentaa toteuttamalla seuraavia toiminnallisuuksia.
 
-- Ohjelma hakee lajinimiparit tiedostosta (Tehty viikko 5)
 - Tiedon tallentaminen tietokantaan
-- Valinta mitä lajiryhmää haluaa harjoitella (Tehty viikko 4)
 - Tulosten tilastointi ja esittäminen
 - Erilliset käyttäjät
 - Salasanat eri käyttäjille
